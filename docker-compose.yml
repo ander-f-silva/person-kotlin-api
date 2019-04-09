@@ -1,0 +1,27 @@
+version: '3.1'
+services:
+  person:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image:
+      persons:latest
+    container_name: persons-api
+    environment:
+      ENVIRONMENT: local
+      DB_USERNAME: person
+      DB_PASSWORD: person
+      DB_ENDPOINT: jdbc:mysql://persons-db:3306/persons
+    ports:
+    - "9080:9080"
+  mysql:
+    image: "mysql:5.7"
+    restart: always
+    container_name: persons-db
+    environment:
+      MYSQL_DATABASE: persons
+      MYSQL_USER: person
+      MYSQL_PASSWORD: person
+      MYSQL_ROOT_PASSWORD: person
+    ports:
+    - "3306:3306"
