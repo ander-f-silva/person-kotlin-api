@@ -225,7 +225,7 @@ Ou caso esteja no heroku
 
 ```
 http://api-person.herokuapp.com/api/actuator/health
-``
+```
 
 ## Gestão do Projeto e técnicas para construção da API
 
